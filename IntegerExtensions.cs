@@ -6,8 +6,19 @@ namespace PadawansTask3
     {
         public static int Gcd(int a, int b)
         {
-            // put your code here
-            throw new NotImplementedException();
+            if (a == 0 || b == 0)
+                return a == 0 ? b : a;
+            a = CheckSign(a);
+            b = CheckSign(b);
+            if ((a % b) > 0)
+                return Gcd(b, (a % b));
+            else
+                return b;
+        }
+
+        private static int CheckSign(int number)
+        {
+            return Math.Abs(number);
         }
     }
 }
